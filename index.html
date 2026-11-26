@@ -2,116 +2,1008 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>TOPNET | A internet Top na sua Direção!</title>
+<title>TOPNET | Internet TOP na sua Direção!</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta name="description" content="Conheça os planos TOPNET. Internet fibra óptica, velocidade, suporte próximo e planos sem fidelidade.">
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #ffffff;
-            color: #17324D;
-        }
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&family=Rajdhani:wght@400;500;600;700;800&display=swap');
 
-        .logo {
-            width: 100%;
-            display: block;
-        }
+:root {
+  --azul: #00c8ff;
+  --azul-claro: #65e4ff;
+  --azul-escuro: #03172c;
+  --fundo: #020b19;
+  --verde: #39ff68;
+  --branco: #ffffff;
+}
 
-        .conteudo {
-            text-align: center;
-            padding: 35px 20px;
-        }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-        h1 {
-            font-size: 28px;
-            margin-bottom: 15px;
-        }
+html {
+  scroll-behavior: smooth;
+}
 
-        p {
-            font-size: 17px;
-            line-height: 1.6;
-        }
+body {
+  font-family: 'Rajdhani', sans-serif;
+  background: var(--fundo);
+  color: white;
+  overflow-x: hidden;
+}
 
-        .destaque {
-            color: #39D353;
-            font-weight: bold;
-            margin-top: 15px;
-        }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-        .botao {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 15px 25px;
-            background: #39D353;
-            color: #17324D;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 8px;
-        }
+.container {
+  width: min(1180px, 92%);
+  margin: auto;
+}
 
-        footer {
-            background: #17324D;
-            color: white;
-            text-align: center;
-            padding: 25px;
-        }
-    </style>
+/* FUNDO TECNOLÓGICO */
+
+.fundo-luz {
+  position: relative;
+  isolation: isolate;
+}
+
+.fundo-luz::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 15% 30%, #00c8ff30, transparent 45%),
+    radial-gradient(ellipse at 85% 70%, #39ff6820, transparent 42%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.fundo-luz::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(#00c8ff0b 1px, transparent 1px),
+    linear-gradient(90deg, #00c8ff0b 1px, transparent 1px);
+  background-size: 45px 45px;
+  mask-image: linear-gradient(to bottom, black, transparent 90%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* CABEÇALHO */
+
+header {
+  background: #020b19ed;
+  border-bottom: 1px solid #00c8ff50;
+  box-shadow: 0 0 25px #00c8ff18;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(15px);
+}
+
+.menu {
+  min-height: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  width: 175px;
+  max-height: 68px;
+  object-fit: contain;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+nav a {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  transition: .3s;
+}
+
+nav a:hover {
+  color: var(--verde);
+  text-shadow: 0 0 12px var(--verde);
+}
+
+/* BOTÕES */
+
+.botao {
+  display: inline-block;
+  background: var(--verde);
+  color: #031b0a;
+  padding: 15px 27px;
+  border-radius: 7px;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 12px;
+  letter-spacing: 1px;
+  border: 1px solid #a1ffb4;
+  box-shadow: 0 0 12px #39ff6880, 0 0 35px #39ff6835;
+  cursor: pointer;
+  transition: .3s;
+  text-align: center;
+}
+
+.botao:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 0 20px var(--verde), 0 0 50px #39ff6870;
+}
+
+/* PRIMEIRA TELA */
+
+.hero {
+  min-height: 660px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: #00c8ff16;
+  filter: blur(70px);
+  right: 5%;
+  top: 5%;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 25px;
+  position: relative;
+  z-index: 2;
+}
+
+.selo {
+  display: inline-block;
+  color: var(--verde);
+  border: 1px solid #39ff6870;
+  background: #39ff6810;
+  padding: 9px 17px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-bottom: 25px;
+  box-shadow: 0 0 15px #39ff6820;
+}
+
+h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(35px, 5vw, 65px);
+  line-height: 1.13;
+  font-weight: 900;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+
+h1 .azul {
+  color: var(--azul);
+  text-shadow: 0 0 15px #00c8ff90;
+}
+
+h1 .verde {
+  color: var(--verde);
+  text-shadow: 0 0 15px #39ff6880;
+}
+
+.hero-texto {
+  font-size: 21px;
+  color: #d2e8f5;
+  max-width: 530px;
+  margin-bottom: 25px;
+  line-height: 1.4;
+}
+
+.preco {
+  margin: 25px 0 30px;
+}
+
+.preco small {
+  display: block;
+  font-size: 19px;
+  color: white;
+  font-weight: bold;
+}
+
+.preco strong {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--verde);
+  font-size: clamp(35px, 5vw, 52px);
+  text-shadow: 0 0 18px #39ff6870;
+}
+
+.preco span {
+  color: var(--azul-claro);
+  font-size: 17px;
+}
+
+.hero-imagem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-imagem::before {
+  content: "";
+  position: absolute;
+  width: 85%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 2px solid #00c8ff65;
+  box-shadow: 0 0 35px #00c8ff50, inset 0 0 45px #00c8ff20;
+  animation: pulsar 4s infinite;
+}
+
+.hero-imagem::after {
+  content: "";
+  position: absolute;
+  width: 105%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--verde), var(--azul), transparent);
+  transform: rotate(-30deg);
+  box-shadow: 0 0 18px var(--azul);
+}
+
+.hero-imagem img {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 540px;
+  max-height: 570px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 25px #00c8ff55);
+  animation: flutuar 5s ease-in-out infinite;
+}
+
+@keyframes flutuar {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+@keyframes pulsar {
+  0%,100% { opacity: .5; transform: scale(.96); }
+  50% { opacity: 1; transform: scale(1.03); }
+}
+
+/* FAIXA */
+
+.faixa {
+  background: linear-gradient(90deg, #00a8e8, #00d8f5, #39ff68);
+  color: #021526;
+  padding: 14px 0;
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+/* BENEFÍCIOS */
+
+.secao {
+  padding: 85px 0;
+  position: relative;
+}
+
+.titulo {
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(24px, 4vw, 38px);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.titulo span {
+  color: var(--verde);
+  text-shadow: 0 0 15px #39ff6870;
+}
+
+.subtitulo {
+  text-align: center;
+  font-size: 19px;
+  color: #a8c6d9;
+  margin-bottom: 45px;
+}
+
+.beneficios-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.beneficio {
+  background: linear-gradient(145deg, #0b2743, #041324);
+  border: 1px solid #00c8ff55;
+  padding: 30px 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 20px #00c8ff10;
+  transition: .3s;
+}
+
+.beneficio:hover {
+  transform: translateY(-7px);
+  border-color: var(--verde);
+  box-shadow: 0 0 25px #39ff6830;
+}
+
+.icone {
+  font-size: 43px;
+  margin-bottom: 12px;
+}
+
+.beneficio h3 {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--azul);
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.beneficio p {
+  color: #c6d9e5;
+  font-size: 17px;
+}
+
+/* PLANOS */
+
+.planos {
+  background:
+    radial-gradient(ellipse at 50% 0%, #00c8ff1c, transparent 60%),
+    #041324;
+}
+
+.planos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.plano {
+  background: linear-gradient(160deg, #0b2b49, #061426);
+  border: 1px solid #00c8ff65;
+  padding: 28px 17px;
+  border-radius: 13px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: .3s;
+  box-shadow: 0 0 22px #00c8ff12;
+}
+
+.plano:hover {
+  transform: translateY(-8px);
+  border-color: var(--verde);
+  box-shadow: 0 0 25px #39ff6840;
+}
+
+.plano.destaque {
+  border: 2px solid var(--verde);
+  box-shadow: 0 0 25px #39ff6840;
+  position: relative;
+}
+
+.etiqueta-destaque {
+  color: #031b0a;
+  background: var(--verde);
+  padding: 7px 15px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 10px;
+  font-weight: 900;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  box-shadow: 0 0 15px #39ff6880;
+}
+
+.plano h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 20px;
+  color: white;
+}
+
+.megas {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 45px;
+  color: var(--azul);
+  font-weight: 900;
+  text-shadow: 0 0 17px #00c8ff75;
+}
+
+.megas small {
+  display: block;
+  font-size: 12px;
+  color: var(--verde);
+  letter-spacing: 4px;
+}
+
+.valor {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 25px;
+  color: var(--verde);
+  margin-top: 20px;
+  text-shadow: 0 0 15px #39ff6870;
+}
+
+.mensal {
+  color: #a9c8da;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.plano ul {
+  list-style: none;
+  text-align: left;
+  width: 100%;
+  flex-grow: 1;
+  margin-bottom: 25px;
+}
+
+.plano li {
+  color: #d9eaf3;
+  border-bottom: 1px solid #ffffff15;
+  padding: 9px 0;
+  font-size: 16px;
+}
+
+.plano li::before {
+  content: "✓ ";
+  color: var(--verde);
+  font-weight: 900;
+}
+
+.plano .botao {
+  width: 100%;
+  padding: 13px 8px;
+}
+
+.personalizado {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.personalizado p {
+  color: #d2e8f5;
+  font-size: 19px;
+  margin-bottom: 17px;
+}
+
+/* GAMER */
+
+.gamer {
+  background:
+    radial-gradient(ellipse at 80% 50%, #39ff6815, transparent 50%),
+    #020b19;
+  text-align: center;
+}
+
+.gamer-destaque {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(26px, 4vw, 44px);
+  line-height: 1.4;
+  margin: 25px auto;
+  max-width: 850px;
+}
+
+.gamer-destaque span {
+  color: var(--azul);
+  text-shadow: 0 0 15px #00c8ff90;
+}
+
+/* CONTRATAÇÃO */
+
+.contato {
+  background:
+    radial-gradient(ellipse at 20% 0%, #00c8ff20, transparent 50%),
+    #061629;
+}
+
+.formulario {
+  max-width: 750px;
+  margin: auto;
+  padding: 35px;
+  background: linear-gradient(145deg, #0b2b49, #041324);
+  border: 1px solid #00c8ff70;
+  border-radius: 15px;
+  box-shadow: 0 0 35px #00c8ff20;
+}
+
+.campo {
+  margin-bottom: 18px;
+}
+
+.campo label {
+  display: block;
+  color: var(--verde);
+  font-weight: bold;
+  font-size: 17px;
+  margin-bottom: 7px;
+}
+
+.campo input,
+.campo select {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #00c8ff65;
+  border-radius: 6px;
+  background: #020e1c;
+  color: white;
+  font-size: 16px;
+  font-family: 'Rajdhani', sans-serif;
+  outline: none;
+}
+
+.campo input:focus,
+.campo select:focus {
+  border-color: var(--verde);
+  box-shadow: 0 0 12px #39ff6840;
+}
+
+.campo select option {
+  background: #020e1c;
+}
+
+.duplo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.formulario button {
+  width: 100%;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.aviso {
+  text-align: center;
+  font-size: 14px;
+  color: #a8c6d9;
+  margin-top: 15px;
+}
+
+/* RODAPÉ */
+
+footer {
+  background: #010813;
+  border-top: 1px solid #00c8ff60;
+  text-align: center;
+  padding: 40px 15px;
+}
+
+footer img {
+  width: 160px;
+  max-height: 75px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+footer p {
+  color: #a9c8da;
+  font-size: 16px;
+}
+
+footer strong {
+  color: var(--verde);
+}
+
+/* CELULAR */
+
+@media(max-width: 850px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-texto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-imagem img {
+    max-width: 390px;
+    max-height: 400px;
+  }
+
+  .planos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .beneficios-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media(max-width: 560px) {
+  .menu {
+    flex-direction: column;
+    padding: 12px 0;
+  }
+
+  nav {
+    gap: 15px;
+  }
+
+  nav a {
+    font-size: 10px;
+  }
+
+  nav .botao {
+    padding: 10px;
+  }
+
+  .hero {
+    padding: 55px 0;
+  }
+
+  .planos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .duplo {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .formulario {
+    padding: 20px;
+  }
+
+  .secao {
+    padding: 60px 0;
+  }
+}
+
+@media(prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+</style>
 </head>
 
 <body>
 
-    <header>
-        <img
-            class="logo"
-            src="fe47c62a-6809-4356-b434-55416eb63483.jpeg"
-            alt="Identidade visual oficial TOPNET"
-        >
-    </header>
+<header>
+  <div class="container menu">
+    <a href="#inicio">
+      <img class="logo" src="imagens/logo-topnet.jpeg" alt="TOPNET">
+    </a>
 
-    <main>
-        <section class="conteudo">
+    <nav>
+      <a href="#planos">PLANOS</a>
+      <a href="#beneficios">VANTAGENS</a>
+      <a href="#contato" class="botao">CONTRATAR</a>
+    </nav>
+  </div>
+</header>
 
-            <h1>Sua conexão merece ser TOP!</h1>
+<main>
 
-            <p>
-                Internet de qualidade,
-                atendimento rápido e suporte especializado.
-            </p>
+<section class="hero fundo-luz" id="inicio">
+  <div class="container hero-grid">
 
-            <p class="destaque">
-                Conectando você ao que importa!
-            </p>
+    <div>
+      <div class="selo">⚡ CONEXÃO DE OUTRO NÍVEL ⚡</div>
 
-            <a class="botao"
-               href="https://wa.me/5527998028517">
-                CONTRATE PELO WHATSAPP
-            </a>
+      <h1>
+        SUA INTERNET<br>
+        <span class="azul">MAIS</span><br>
+        <span class="verde">TURBO!</span>
+      </h1>
 
-        </section>
+      <p class="hero-texto">
+        Para jogar, trabalhar, assistir e viver conectado.
+        Entre para o universo TOPNET!
+      </p>
 
-        <section class="conteudo">
-            <h1>Conheça a TOPNET</h1>
+      <div class="preco">
+        <small>PLANOS A PARTIR DE</small>
+        <strong>R$ 89,90</strong>
+        <span>/ MÊS</span>
+      </div>
 
-            <p>
-                Nascemos para levar conexão
-                e informação à região de
-                Praia Grande.
-            </p>
-        </section>
-    </main>
+      <a href="#planos" class="botao">ESCOLHA SEU PLANO →</a>
+    </div>
 
-    <footer>
-        <p>TOPNET © 2026</p>
-        <p>A internet Top na sua Direção!</p>
-    </footer>
+    <div class="hero-imagem">
+      <img
+        src="imagens/imagens/Mascote%20Topnet%20em%20Miss%C3%A3o%20Espacial%20Gamer.png"
+        alt="Topinho da TOPNET em missão espacial gamer"
+      >
+    </div>
+
+  </div>
+</section>
+
+<div class="faixa">
+  ⚡ FIBRA ÓPTICA • VELOCIDADE • SUPORTE • SEM FIDELIDADE ⚡
+</div>
+
+<section class="secao fundo-luz" id="beneficios">
+  <div class="container">
+
+    <h2 class="titulo">POR QUE ESCOLHER A <span>TOPNET?</span></h2>
+
+    <p class="subtitulo">
+      Muito mais que internet. Uma experiência TOP!
+    </p>
+
+    <div class="beneficios-grid">
+
+      <div class="beneficio">
+        <div class="icone">⚡</div>
+        <h3>VELOCIDADE</h3>
+        <p>Planos para acompanhar sua rotina e conectar seus dispositivos.</p>
+      </div>
+
+      <div class="beneficio">
+        <div class="icone">🎧</div>
+        <h3>SUPORTE PRÓXIMO</h3>
+        <p>Atendimento rápido e equipe técnica preparada para ajudar.</p>
+      </div>
+
+      <div class="beneficio">
+        <div class="icone">🚀</div>
+        <h3>SEM FIDELIDADE</h3>
+        <p>Mais liberdade para aproveitar sua conexão.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="secao planos" id="planos">
+  <div class="container">
+
+    <h2 class="titulo">ESCOLHA SUA <span>VELOCIDADE</span></h2>
+
+    <p class="subtitulo">
+      Existe um plano TOP esperando por você!
+    </p>
+
+    <div class="planos-grid">
+
+      <article class="plano">
+        <h3>TOP 100</h3>
+        <div class="megas">100<small>MEGAS</small></div>
+        <div class="valor">R$ 89,90</div>
+        <div class="mensal">POR MÊS</div>
+
+        <ul>
+          <li>Fibra óptica</li>
+          <li>Sem fidelidade</li>
+          <li>Suporte técnico</li>
+        </ul>
+
+        <button class="botao" onclick="selecionarPlano('100 Mega - R$ 89,90')">
+          QUERO ESSE!
+        </button>
+      </article>
+
+      <article class="plano">
+        <h3>TOP 200</h3>
+        <div class="megas">200<small>MEGAS</small></div>
+        <div class="valor">R$ 99,90</div>
+        <div class="mensal">POR MÊS</div>
+
+        <ul>
+          <li>Fibra óptica</li>
+          <li>Sem fidelidade</li>
+          <li>Suporte técnico</li>
+        </ul>
+
+        <button class="botao" onclick="selecionarPlano('200 Mega - R$ 99,90')">
+          QUERO ESSE!
+        </button>
+      </article>
+
+      <article class="plano">
+        <h3>TOP 400</h3>
+        <div class="megas">400<small>MEGAS</small></div>
+        <div class="valor">R$ 109,90</div>
+        <div class="mensal">POR MÊS</div>
+
+        <ul>
+          <li>Fibra óptica</li>
+          <li>Sem fidelidade</li>
+          <li>Suporte técnico</li>
+        </ul>
+
+        <button class="botao" onclick="selecionarPlano('400 Mega - R$ 109,90')">
+          QUERO ESSE!
+        </button>
+      </article>
+
+      <article class="plano destaque">
+        <div class="etiqueta-destaque">⚡ DESTAQUE GAMER ⚡</div>
+        <h3>TOP 500</h3>
+        <div class="megas">500<small>MEGAS</small></div>
+        <div class="valor">R$ 119,00</div>
+        <div class="mensal">POR MÊS</div>
+
+        <ul>
+          <li>Download e upload full</li>
+          <li>Ideal para gamers</li>
+          <li>Sem fidelidade</li>
+          <li>Suporte técnico</li>
+        </ul>
+
+        <button class="botao" onclick="selecionarPlano('500 Mega - R$ 119,00')">
+          QUERO ESSE!
+        </button>
+      </article>
+
+    </div>
+
+    <div class="personalizado">
+      <p>Quer uma solução diferente?</p>
+      <button class="botao" onclick="selecionarPlano('Plano personalizado - A combinar')">
+        PERSONALIZAR MEU PLANO
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<section class="secao gamer fundo-luz">
+  <div class="container">
+
+    <div class="selo">🎮 MODO GAMER ATIVADO</div>
+
+    <h2 class="titulo">ENTRE NO <span>JOGO!</span></h2>
+
+    <p class="gamer-destaque">
+      SUA PARTIDA MERECE UMA CONEXÃO
+      <span>TOP!</span>
+    </p>
+
+    <p class="subtitulo">
+      Conheça o TOP 500: 500 Mega com download e upload full.
+    </p>
+
+    <a href="#planos" class="botao">CONHECER O TOP 500 →</a>
+
+  </div>
+</section>
+
+<section class="secao contato" id="contato">
+  <div class="container">
+
+    <h2 class="titulo">VAMOS CONECTAR <span>VOCÊ?</span></h2>
+
+    <p class="subtitulo">
+      Informe seu endereço para nossa equipe consultar a disponibilidade.
+    </p>
+
+    <form class="formulario" id="formulario">
+
+      <div class="campo">
+        <label for="plano">ESCOLHA SEU PLANO</label>
+        <select id="plano" required>
+          <option value="">Selecione um plano</option>
+          <option>100 Mega - R$ 89,90</option>
+          <option>200 Mega - R$ 99,90</option>
+          <option>400 Mega - R$ 109,90</option>
+          <option>500 Mega - R$ 119,00</option>
+          <option>Plano personalizado - A combinar</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <label for="rua">RUA / AVENIDA</label>
+        <input id="rua" type="text" placeholder="Nome da rua" required>
+      </div>
+
+      <div class="duplo">
+        <div class="campo">
+          <label for="numero">NÚMERO</label>
+          <input id="numero" type="text" placeholder="Número" required>
+        </div>
+
+        <div class="campo">
+          <label for="cep">CEP</label>
+          <input id="cep" type="text" placeholder="00000-000" required>
+        </div>
+      </div>
+
+      <div class="campo">
+        <label for="bairro">BAIRRO</label>
+        <input id="bairro" type="text" placeholder="Seu bairro" required>
+      </div>
+
+      <div class="campo">
+        <label for="cidade">CIDADE</label>
+        <input id="cidade" type="text" value="Praia Grande - ES" required>
+      </div>
+
+      <button type="submit" class="botao">
+        ⚡ CONSULTAR DISPONIBILIDADE NO WHATSAPP
+      </button>
+
+      <p class="aviso">
+        A disponibilidade será confirmada pela equipe TOPNET.
+      </p>
+
+    </form>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <img src="imagens/logo-topnet.jpeg" alt="TOPNET">
+
+  <p>A internet Top na sua Direção!</p>
+  <p>Atendimento: <strong>(27) 99802-8517</strong></p>
+  <p>© TOPNET - Todos os direitos reservados.</p>
+</footer>
+
+<script>
+function selecionarPlano(plano) {
+  document.getElementById("plano").value = plano;
+
+  document.getElementById("contato").scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
+document.getElementById("formulario").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const plano = document.getElementById("plano").value;
+  const rua = document.getElementById("rua").value.trim();
+  const numero = document.getElementById("numero").value.trim();
+  const cep = document.getElementById("cep").value.trim();
+  const bairro = document.getElementById("bairro").value.trim();
+  const cidade = document.getElementById("cidade").value.trim();
+
+  const mensagem =
+    "Olá, TOPNET! Quero consultar a disponibilidade.\n\n" +
+    "Plano: " + plano + "\n" +
+    "Rua: " + rua + "\n" +
+    "Número: " + numero + "\n" +
+    "CEP: " + cep + "\n" +
+    "Bairro: " + bairro + "\n" +
+    "Cidade: " + cidade;
+
+  const telefone = "5527998028517";
+
+  const link = "https://wa.me/" + telefone +
+    "?text=" + encodeURIComponent(mensagem);
+
+  window.open(link, "_blank");
+});
+</script>
 
 </body>
 </html>
+
+
