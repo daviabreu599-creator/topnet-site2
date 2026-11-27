@@ -2,1008 +2,1589 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>TOPNET | Internet TOP na sua Direção!</title>
-
-<meta name="description" content="Conheça os planos TOPNET. Internet fibra óptica, velocidade, suporte próximo e planos sem fidelidade.">
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&family=Rajdhani:wght@400;500;600;700;800&display=swap');
-
-:root {
-  --azul: #00c8ff;
-  --azul-claro: #65e4ff;
-  --azul-escuro: #03172c;
-  --fundo: #020b19;
-  --verde: #39ff68;
-  --branco: #ffffff;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Rajdhani', sans-serif;
-  background: var(--fundo);
-  color: white;
-  overflow-x: hidden;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.container {
-  width: min(1180px, 92%);
-  margin: auto;
-}
-
-/* FUNDO TECNOLÓGICO */
-
-.fundo-luz {
-  position: relative;
-  isolation: isolate;
-}
-
-.fundo-luz::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse at 15% 30%, #00c8ff30, transparent 45%),
-    radial-gradient(ellipse at 85% 70%, #39ff6820, transparent 42%);
-  z-index: -1;
-  pointer-events: none;
-}
-
-.fundo-luz::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(#00c8ff0b 1px, transparent 1px),
-    linear-gradient(90deg, #00c8ff0b 1px, transparent 1px);
-  background-size: 45px 45px;
-  mask-image: linear-gradient(to bottom, black, transparent 90%);
-  z-index: -1;
-  pointer-events: none;
-}
-
-/* CABEÇALHO */
-
-header {
-  background: #020b19ed;
-  border-bottom: 1px solid #00c8ff50;
-  box-shadow: 0 0 25px #00c8ff18;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  backdrop-filter: blur(15px);
-}
-
-.menu {
-  min-height: 85px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.logo {
-  width: 175px;
-  max-height: 68px;
-  object-fit: contain;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-}
-
-nav a {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 12px;
-  font-weight: bold;
-  transition: .3s;
-}
-
-nav a:hover {
-  color: var(--verde);
-  text-shadow: 0 0 12px var(--verde);
-}
-
-/* BOTÕES */
-
-.botao {
-  display: inline-block;
-  background: var(--verde);
-  color: #031b0a;
-  padding: 15px 27px;
-  border-radius: 7px;
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 900;
-  font-size: 12px;
-  letter-spacing: 1px;
-  border: 1px solid #a1ffb4;
-  box-shadow: 0 0 12px #39ff6880, 0 0 35px #39ff6835;
-  cursor: pointer;
-  transition: .3s;
-  text-align: center;
-}
-
-.botao:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 0 20px var(--verde), 0 0 50px #39ff6870;
-}
-
-/* PRIMEIRA TELA */
-
-.hero {
-  min-height: 660px;
-  display: flex;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  width: 600px;
-  height: 600px;
-  border-radius: 50%;
-  background: #00c8ff16;
-  filter: blur(70px);
-  right: 5%;
-  top: 5%;
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 25px;
-  position: relative;
-  z-index: 2;
-}
-
-.selo {
-  display: inline-block;
-  color: var(--verde);
-  border: 1px solid #39ff6870;
-  background: #39ff6810;
-  padding: 9px 17px;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 10px;
-  letter-spacing: 2px;
-  margin-bottom: 25px;
-  box-shadow: 0 0 15px #39ff6820;
-}
-
-h1 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: clamp(35px, 5vw, 65px);
-  line-height: 1.13;
-  font-weight: 900;
-  margin-bottom: 25px;
-  text-transform: uppercase;
-}
-
-h1 .azul {
-  color: var(--azul);
-  text-shadow: 0 0 15px #00c8ff90;
-}
-
-h1 .verde {
-  color: var(--verde);
-  text-shadow: 0 0 15px #39ff6880;
-}
-
-.hero-texto {
-  font-size: 21px;
-  color: #d2e8f5;
-  max-width: 530px;
-  margin-bottom: 25px;
-  line-height: 1.4;
-}
-
-.preco {
-  margin: 25px 0 30px;
-}
-
-.preco small {
-  display: block;
-  font-size: 19px;
-  color: white;
-  font-weight: bold;
-}
-
-.preco strong {
-  font-family: 'Orbitron', sans-serif;
-  color: var(--verde);
-  font-size: clamp(35px, 5vw, 52px);
-  text-shadow: 0 0 18px #39ff6870;
-}
-
-.preco span {
-  color: var(--azul-claro);
-  font-size: 17px;
-}
-
-.hero-imagem {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-imagem::before {
-  content: "";
-  position: absolute;
-  width: 85%;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  border: 2px solid #00c8ff65;
-  box-shadow: 0 0 35px #00c8ff50, inset 0 0 45px #00c8ff20;
-  animation: pulsar 4s infinite;
-}
-
-.hero-imagem::after {
-  content: "";
-  position: absolute;
-  width: 105%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--verde), var(--azul), transparent);
-  transform: rotate(-30deg);
-  box-shadow: 0 0 18px var(--azul);
-}
-
-.hero-imagem img {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 540px;
-  max-height: 570px;
-  object-fit: contain;
-  filter: drop-shadow(0 0 25px #00c8ff55);
-  animation: flutuar 5s ease-in-out infinite;
-}
-
-@keyframes flutuar {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-14px); }
-}
-
-@keyframes pulsar {
-  0%,100% { opacity: .5; transform: scale(.96); }
-  50% { opacity: 1; transform: scale(1.03); }
-}
-
-/* FAIXA */
-
-.faixa {
-  background: linear-gradient(90deg, #00a8e8, #00d8f5, #39ff68);
-  color: #021526;
-  padding: 14px 0;
-  text-align: center;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 12px;
-  font-weight: 900;
-  letter-spacing: 2px;
-}
-
-/* BENEFÍCIOS */
-
-.secao {
-  padding: 85px 0;
-  position: relative;
-}
-
-.titulo {
-  text-align: center;
-  font-family: 'Orbitron', sans-serif;
-  font-size: clamp(24px, 4vw, 38px);
-  text-transform: uppercase;
-  margin-bottom: 12px;
-}
-
-.titulo span {
-  color: var(--verde);
-  text-shadow: 0 0 15px #39ff6870;
-}
-
-.subtitulo {
-  text-align: center;
-  font-size: 19px;
-  color: #a8c6d9;
-  margin-bottom: 45px;
-}
-
-.beneficios-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.beneficio {
-  background: linear-gradient(145deg, #0b2743, #041324);
-  border: 1px solid #00c8ff55;
-  padding: 30px 20px;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 0 20px #00c8ff10;
-  transition: .3s;
-}
-
-.beneficio:hover {
-  transform: translateY(-7px);
-  border-color: var(--verde);
-  box-shadow: 0 0 25px #39ff6830;
-}
-
-.icone {
-  font-size: 43px;
-  margin-bottom: 12px;
-}
-
-.beneficio h3 {
-  font-family: 'Orbitron', sans-serif;
-  color: var(--azul);
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-
-.beneficio p {
-  color: #c6d9e5;
-  font-size: 17px;
-}
-
-/* PLANOS */
-
-.planos {
-  background:
-    radial-gradient(ellipse at 50% 0%, #00c8ff1c, transparent 60%),
-    #041324;
-}
-
-.planos-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-}
-
-.plano {
-  background: linear-gradient(160deg, #0b2b49, #061426);
-  border: 1px solid #00c8ff65;
-  padding: 28px 17px;
-  border-radius: 13px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: .3s;
-  box-shadow: 0 0 22px #00c8ff12;
-}
-
-.plano:hover {
-  transform: translateY(-8px);
-  border-color: var(--verde);
-  box-shadow: 0 0 25px #39ff6840;
-}
-
-.plano.destaque {
-  border: 2px solid var(--verde);
-  box-shadow: 0 0 25px #39ff6840;
-  position: relative;
-}
-
-.etiqueta-destaque {
-  color: #031b0a;
-  background: var(--verde);
-  padding: 7px 15px;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 10px;
-  font-weight: 900;
-  border-radius: 4px;
-  margin-bottom: 12px;
-  box-shadow: 0 0 15px #39ff6880;
-}
-
-.plano h3 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 20px;
-  color: white;
-}
-
-.megas {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 45px;
-  color: var(--azul);
-  font-weight: 900;
-  text-shadow: 0 0 17px #00c8ff75;
-}
-
-.megas small {
-  display: block;
-  font-size: 12px;
-  color: var(--verde);
-  letter-spacing: 4px;
-}
-
-.valor {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 25px;
-  color: var(--verde);
-  margin-top: 20px;
-  text-shadow: 0 0 15px #39ff6870;
-}
-
-.mensal {
-  color: #a9c8da;
-  font-size: 14px;
-  margin-bottom: 20px;
-}
-
-.plano ul {
-  list-style: none;
-  text-align: left;
-  width: 100%;
-  flex-grow: 1;
-  margin-bottom: 25px;
-}
-
-.plano li {
-  color: #d9eaf3;
-  border-bottom: 1px solid #ffffff15;
-  padding: 9px 0;
-  font-size: 16px;
-}
-
-.plano li::before {
-  content: "✓ ";
-  color: var(--verde);
-  font-weight: 900;
-}
-
-.plano .botao {
-  width: 100%;
-  padding: 13px 8px;
-}
-
-.personalizado {
-  text-align: center;
-  margin-top: 40px;
-}
-
-.personalizado p {
-  color: #d2e8f5;
-  font-size: 19px;
-  margin-bottom: 17px;
-}
-
-/* GAMER */
-
-.gamer {
-  background:
-    radial-gradient(ellipse at 80% 50%, #39ff6815, transparent 50%),
-    #020b19;
-  text-align: center;
-}
-
-.gamer-destaque {
-  font-family: 'Orbitron', sans-serif;
-  font-size: clamp(26px, 4vw, 44px);
-  line-height: 1.4;
-  margin: 25px auto;
-  max-width: 850px;
-}
-
-.gamer-destaque span {
-  color: var(--azul);
-  text-shadow: 0 0 15px #00c8ff90;
-}
-
-/* CONTRATAÇÃO */
-
-.contato {
-  background:
-    radial-gradient(ellipse at 20% 0%, #00c8ff20, transparent 50%),
-    #061629;
-}
-
-.formulario {
-  max-width: 750px;
-  margin: auto;
-  padding: 35px;
-  background: linear-gradient(145deg, #0b2b49, #041324);
-  border: 1px solid #00c8ff70;
-  border-radius: 15px;
-  box-shadow: 0 0 35px #00c8ff20;
-}
-
-.campo {
-  margin-bottom: 18px;
-}
-
-.campo label {
-  display: block;
-  color: var(--verde);
-  font-weight: bold;
-  font-size: 17px;
-  margin-bottom: 7px;
-}
-
-.campo input,
-.campo select {
-  width: 100%;
-  padding: 14px;
-  border: 1px solid #00c8ff65;
-  border-radius: 6px;
-  background: #020e1c;
-  color: white;
-  font-size: 16px;
-  font-family: 'Rajdhani', sans-serif;
-  outline: none;
-}
-
-.campo input:focus,
-.campo select:focus {
-  border-color: var(--verde);
-  box-shadow: 0 0 12px #39ff6840;
-}
-
-.campo select option {
-  background: #020e1c;
-}
-
-.duplo {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-}
-
-.formulario button {
-  width: 100%;
-  font-size: 13px;
-  margin-top: 10px;
-}
-
-.aviso {
-  text-align: center;
-  font-size: 14px;
-  color: #a8c6d9;
-  margin-top: 15px;
-}
-
-/* RODAPÉ */
-
-footer {
-  background: #010813;
-  border-top: 1px solid #00c8ff60;
-  text-align: center;
-  padding: 40px 15px;
-}
-
-footer img {
-  width: 160px;
-  max-height: 75px;
-  object-fit: contain;
-  margin-bottom: 12px;
-}
-
-footer p {
-  color: #a9c8da;
-  font-size: 16px;
-}
-
-footer strong {
-  color: var(--verde);
-}
-
-/* CELULAR */
-
-@media(max-width: 850px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .hero-texto {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .hero-imagem img {
-    max-width: 390px;
-    max-height: 400px;
-  }
-
-  .planos-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .beneficios-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media(max-width: 560px) {
-  .menu {
-    flex-direction: column;
-    padding: 12px 0;
-  }
-
-  nav {
-    gap: 15px;
-  }
-
-  nav a {
-    font-size: 10px;
-  }
-
-  nav .botao {
-    padding: 10px;
-  }
-
-  .hero {
-    padding: 55px 0;
-  }
-
-  .planos-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .duplo {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-
-  .formulario {
-    padding: 20px;
-  }
-
-  .secao {
-    padding: 60px 0;
-  }
-}
-
-@media(prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation: none !important;
-    scroll-behavior: auto !important;
-    transition: none !important;
-  }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="TOPNET: internet fibra óptica em Praia Grande e região. Conheça nossos planos de 100, 200, 400 e 500 Mega. Atendimento personalizado e sem fidelidade.">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>TOPNET | A internet Top na sua Direção!</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --blue: #00C8FF;
+            --blue-dark: #087BA8;
+            --navy: #17324D;
+            --green: #39D353;
+            --green-dark: #159B36;
+            --white: #FFFFFF;
+            --light: #F5FAFC;
+            --text: #29465C;
+            --muted: #657D8D;
+            --border: #DCEBF0;
+            --shadow: 0 12px 35px rgba(23, 50, 77, .09);
+            --radius: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: var(--white);
+            color: var(--navy);
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        button, input, select {
+            font: inherit;
+        }
+
+        button, a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* FUNDO COM MAPA-MÚNDI PONTILHADO */
+        .world-map {
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .world-map svg {
+            width: min(1200px, 110vw);
+            height: auto;
+            opacity: .17;
+        }
+
+        .world-map circle {
+            fill: var(--green);
+        }
+
+        .ambient-light {
+            position: fixed;
+            z-index: -1;
+            pointer-events: none;
+            border-radius: 50%;
+            filter: blur(75px);
+            opacity: .12;
+        }
+
+        .ambient-blue {
+            width: 420px;
+            height: 420px;
+            background: var(--blue);
+            top: 5%;
+            right: -220px;
+        }
+
+        .ambient-green {
+            width: 380px;
+            height: 380px;
+            background: var(--green);
+            bottom: 0;
+            left: -220px;
+        }
+
+        /* ELEMENTOS GERAIS */
+        .container {
+            width: min(1180px, 90%);
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 85px 0;
+        }
+
+        .section-heading {
+            max-width: 720px;
+            margin: 0 auto 45px;
+            text-align: center;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            color: var(--green-dark);
+            background: rgba(57, 211, 83, .10);
+            border: 1px solid rgba(57, 211, 83, .35);
+            border-radius: 30px;
+            padding: 7px 15px;
+            font-weight: 700;
+            font-size: 15px;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .section-heading h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(25px, 4vw, 39px);
+            line-height: 1.2;
+            margin-bottom: 14px;
+            color: var(--navy);
+        }
+
+        .section-heading h2 span {
+            color: var(--green-dark);
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 9px;
+            min-height: 49px;
+            padding: 13px 23px;
+            border: 0;
+            border-radius: 10px;
+            text-decoration: none;
+            cursor: pointer;
+            background: linear-gradient(110deg, var(--blue), var(--green));
+            color: #07344B;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 12px;
+            font-weight: 800;
+            text-align: center;
+            transition: transform .25s, box-shadow .25s;
+            box-shadow: 0 7px 20px rgba(0, 200, 255, .20);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(57, 211, 83, .30);
+        }
+
+        .btn-outline {
+            background: white;
+            border: 1px solid var(--green);
+            color: var(--navy);
+            box-shadow: none;
+        }
+
+        /* CABEÇALHO */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, .94);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(57, 211, 83, .30);
+            box-shadow: 0 4px 20px rgba(23, 50, 77, .05);
+        }
+
+        .header-inner {
+            min-height: 86px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .brand img {
+            display: block;
+            width: 175px;
+            max-height: 70px;
+            object-fit: contain;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: var(--navy);
+            font-size: 18px;
+            font-weight: 700;
+            transition: color .2s;
+        }
+
+        .nav a:hover {
+            color: var(--green-dark);
+        }
+
+        .menu-toggle {
+            display: none;
+            border: 1px solid var(--border);
+            background: white;
+            color: var(--navy);
+            border-radius: 9px;
+            padding: 8px 12px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* BANNER PRINCIPAL */
+        .hero {
+            padding: 70px 0 60px;
+            min-height: 590px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.05fr .95fr;
+            align-items: center;
+            gap: 35px;
+        }
+
+        .hero-copy {
+            max-width: 650px;
+        }
+
+        .hero-copy h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(36px, 5.2vw, 65px);
+            line-height: 1.13;
+            margin-bottom: 22px;
+            color: var(--navy);
+        }
+
+        .hero-copy h1 span {
+            color: var(--green-dark);
+            text-shadow: 0 0 18px rgba(57, 211, 83, .15);
+        }
+
+        .hero-copy p {
+            color: var(--text);
+            font-size: 23px;
+            font-weight: 600;
+            line-height: 1.45;
+            margin-bottom: 28px;
+        }
+
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 13px;
+        }
+
+        .hero-note {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            margin-top: 27px;
+            color: var(--text);
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .hero-note span::before {
+            content: "✓";
+            color: var(--green-dark);
+            font-weight: 900;
+            margin-right: 7px;
+        }
+
+        .hero-visual {
+            min-width: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero-visual::before {
+            content: "";
+            position: absolute;
+            width: 85%;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 200, 255, .12), rgba(57, 211, 83, .07) 55%, transparent 72%);
+        }
+
+        .hero-visual img {
+            position: relative;
+            width: 100%;
+            max-width: 510px;
+            max-height: 480px;
+            object-fit: contain;
+            filter: drop-shadow(0 18px 25px rgba(0, 115, 160, .15));
+            animation: float 4.5s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+
+        /* FAIXA DE DIFERENCIAIS */
+        .quick-benefits {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+            padding-bottom: 35px;
+        }
+
+        .quick-item {
+            background: rgba(255, 255, 255, .92);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 20px 14px;
+            text-align: center;
+            box-shadow: 0 7px 20px rgba(23, 50, 77, .04);
+        }
+
+        .quick-item strong {
+            display: block;
+            color: var(--green-dark);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 13px;
+            margin-bottom: 7px;
+        }
+
+        .quick-item span {
+            color: var(--text);
+            font-size: 17px;
+            font-weight: 600;
+        }
+
+        /* APRESENTAÇÃO */
+        .about {
+            background: rgba(245, 250, 252, .86);
+            border-top: 1px solid rgba(0, 200, 255, .15);
+            border-bottom: 1px solid rgba(57, 211, 83, .20);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 45px;
+        }
+
+        .about-copy h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(27px, 4vw, 40px);
+            margin-bottom: 20px;
+        }
+
+        .about-copy h2 span {
+            color: var(--green-dark);
+        }
+
+        .about-copy p {
+            color: var(--text);
+            font-size: 21px;
+            line-height: 1.55;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .about-highlight {
+            background: white;
+            padding: 30px;
+            border-radius: var(--radius);
+            border-left: 5px solid var(--green);
+            box-shadow: var(--shadow);
+        }
+
+        .about-highlight strong {
+            display: block;
+            color: var(--green-dark);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+
+        .about-highlight p {
+            font-size: 19px;
+            color: var(--text);
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        /* PLANOS */
+        .plans {
+            background: rgba(255, 255, 255, .80);
+        }
+
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            align-items: stretch;
+        }
+
+        .plan-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 27px 20px;
+            box-shadow: var(--shadow);
+            transition: transform .25s, border-color .25s, box-shadow .25s;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-7px);
+            border-color: var(--green);
+            box-shadow: 0 16px 35px rgba(57, 211, 83, .13);
+        }
+
+        .plan-card.featured {
+            border: 2px solid var(--green);
+            box-shadow: 0 12px 35px rgba(57, 211, 83, .16);
+        }
+
+        .plan-tag {
+            align-self: center;
+            padding: 7px 12px;
+            background: rgba(57, 211, 83, .16);
+            color: #087A28;
+            border-radius: 30px;
+            font-weight: 800;
+            font-size: 13px;
+            margin-bottom: 14px;
+            letter-spacing: .5px;
+        }
+
+        .plan-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--navy);
+            text-align: center;
+            font-size: 19px;
+            margin-bottom: 14px;
+        }
+
+        .plan-speed {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--blue-dark);
+            text-align: center;
+            font-size: 36px;
+            font-weight: 800;
+        }
+
+        .plan-speed small {
+            font-size: 14px;
+        }
+
+        .plan-price {
+            text-align: center;
+            font-size: 30px;
+            font-weight: 800;
+            color: var(--navy);
+            margin: 13px 0 18px;
+        }
+
+        .plan-price small {
+            font-size: 15px;
+            color: var(--muted);
+        }
+
+        .plan-features {
+            list-style: none;
+            margin: 0 0 24px;
+            flex: 1;
+        }
+
+        .plan-features li {
+            border-top: 1px solid #EDF3F5;
+            padding: 10px 0;
+            color: var(--text);
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .plan-features li::before {
+            content: "✓";
+            color: var(--green-dark);
+            font-weight: 900;
+            margin-right: 8px;
+        }
+
+        .plan-card .btn {
+            width: 100%;
+        }
+
+        /* TOP 500 GAMER */
+        .gamer {
+            padding: 25px 0 80px;
+        }
+
+        .gamer-box {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            gap: 30px;
+            padding: 45px;
+            border-radius: 24px;
+            overflow: hidden;
+            color: white;
+            background: linear-gradient(115deg, #092B45, #075A7B);
+            box-shadow: 0 18px 45px rgba(9, 43, 69, .17);
+        }
+
+        .gamer-box::after {
+            content: "";
+            position: absolute;
+            width: 380px;
+            height: 380px;
+            right: 0;
+            top: -220px;
+            border-radius: 50%;
+            background: rgba(0, 200, 255, .20);
+            filter: blur(20px);
+        }
+
+        .gamer-copy {
+            position: relative;
+            z-index: 1;
+        }
+
+        .gamer-copy .eyebrow {
+            color: #A7FFB4;
+            border-color: rgba(57, 211, 83, .55);
+            background: rgba(57, 211, 83, .13);
+        }
+
+        .gamer-copy h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: #A7FFB4;
+            font-size: clamp(26px, 4vw, 42px);
+            margin-bottom: 15px;
+        }
+
+        .gamer-copy p {
+            font-size: 22px;
+            line-height: 1.5;
+            color: #F0FAFF;
+            font-weight: 600;
+            max-width: 700px;
+            margin-bottom: 24px;
+        }
+
+        .gamer-copy strong {
+            color: var(--blue);
+        }
+
+        .gamer-symbol {
+            position: relative;
+            z-index: 1;
+            font-size: clamp(75px, 10vw, 125px);
+            filter: drop-shadow(0 0 20px rgba(0, 200, 255, .35));
+        }
+
+        /* DIFERENCIAIS */
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .advantage {
+            padding: 28px;
+            border-radius: 17px;
+            background: white;
+            border: 1px solid var(--border);
+            box-shadow: 0 9px 25px rgba(23, 50, 77, .06);
+            transition: transform .25s;
+        }
+
+        .advantage:hover {
+            transform: translateY(-5px);
+        }
+
+        .advantage-icon {
+            width: 55px;
+            height: 55px;
+            display: grid;
+            place-items: center;
+            background: rgba(57, 211, 83, .12);
+            border-radius: 14px;
+            font-size: 29px;
+            margin-bottom: 17px;
+        }
+
+        .advantage h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 16px;
+            color: var(--green-dark);
+            margin-bottom: 11px;
+        }
+
+        .advantage p {
+            font-size: 19px;
+            color: var(--text);
+            font-weight: 600;
+            line-height: 1.45;
+        }
+
+        /* CHAMADA */
+        .callout {
+            padding: 0 0 80px;
+        }
+
+        .callout-inner {
+            text-align: center;
+            padding: 38px 25px;
+            background: linear-gradient(110deg, rgba(0, 200, 255, .10), rgba(57, 211, 83, .12));
+            border: 1px solid rgba(57, 211, 83, .35);
+            border-radius: 20px;
+        }
+
+        .callout-inner h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(23px, 4vw, 35px);
+            margin-bottom: 12px;
+        }
+
+        .callout-inner p {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 22px;
+        }
+
+        /* FORMULÁRIO */
+        .contact {
+            background: rgba(245, 250, 252, .92);
+            border-top: 1px solid rgba(0, 200, 255, .18);
+        }
+
+        .form-card {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 35px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-card label {
+            display: block;
+            color: var(--navy);
+            font-size: 18px;
+            font-weight: 700;
+            margin: 17px 0 7px;
+        }
+
+        .form-card input,
+        .form-card select {
+            width: 100%;
+            min-height: 49px;
+            padding: 11px 13px;
+            border: 1px solid #C8DCE5;
+            border-radius: 9px;
+            background: #FCFEFF;
+            color: var(--navy);
+            font-size: 18px;
+            outline: none;
+        }
+
+        .form-card input:focus,
+        .form-card select:focus {
+            border-color: var(--blue);
+            box-shadow: 0 0 0 3px rgba(0, 200, 255, .12);
+        }
+
+        .form-card button {
+            width: 100%;
+            margin-top: 25px;
+            min-height: 55px;
+        }
+
+        .form-note {
+            color: var(--muted);
+            text-align: center;
+            font-size: 16px;
+            margin-top: 14px;
+            font-weight: 600;
+        }
+
+        /* RODAPÉ */
+        .footer {
+            background: #102F48;
+            color: white;
+            padding: 45px 0 22px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr;
+            gap: 35px;
+            padding-bottom: 30px;
+        }
+
+        .footer-logo {
+            display: inline-block;
+            background: white;
+            border-radius: 12px;
+            padding: 8px 12px;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo img {
+            display: block;
+            width: 155px;
+            max-height: 70px;
+            object-fit: contain;
+        }
+
+        .footer h3 {
+            color: #A7FFB4;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 16px;
+            margin-bottom: 13px;
+        }
+
+        .footer p,
+        .footer a {
+            color: #E6F2F7;
+            font-size: 18px;
+            line-height: 1.6;
+            font-weight: 600;
+        }
+
+        .footer a {
+            display: block;
+            text-decoration: none;
+            margin: 4px 0;
+        }
+
+        .footer a:hover {
+            color: var(--green);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,.15);
+            padding-top: 18px;
+            text-align: center;
+            color: #D0E1EA;
+            font-size: 16px;
+        }
+
+        /* BOTÃO FIXO WHATSAPP */
+        .whatsapp-float {
+            position: fixed;
+            z-index: 150;
+            right: 22px;
+            bottom: 22px;
+            width: 61px;
+            height: 61px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            font-size: 30px;
+            font-weight: 800;
+            box-shadow: 0 7px 23px rgba(0,0,0,.19);
+            transition: transform .2s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.09);
+        }
+
+        /* ACESSIBILIDADE E MOVIMENTO */
+        :focus-visible {
+            outline: 3px solid var(--blue);
+            outline-offset: 3px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
+            }
+        }
+
+        /* TABLETS */
+        @media (max-width: 950px) {
+            .nav {
+                gap: 15px;
+            }
+
+            .nav a {
+                font-size: 16px;
+            }
+
+            .plans-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero-grid {
+                gap: 15px;
+            }
+
+            .quick-benefits {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* CELULARES */
+        @media (max-width: 700px) {
+            .header-inner {
+                min-height: 75px;
+                flex-wrap: wrap;
+                padding: 10px 0;
+            }
+
+            .brand img {
+                width: 145px;
+                max-height: 58px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                padding: 8px 0 12px;
+            }
+
+            .nav.open {
+                display: flex;
+            }
+
+            .nav a {
+                padding: 10px 5px;
+                border-top: 1px solid #EDF3F5;
+                font-size: 18px;
+            }
+
+            .nav .btn {
+                margin-top: 10px;
+            }
+
+            .hero {
+                padding: 45px 0 35px;
+                min-height: auto;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-copy {
+                margin: 0 auto;
+            }
+
+            .hero-copy p {
+                font-size: 20px;
+            }
+
+            .hero-actions,
+            .hero-note {
+                justify-content: center;
+            }
+
+            .hero-visual img {
+                max-width: 350px;
+                max-height: 350px;
+            }
+
+            .quick-benefits {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .plans-grid {
+                grid-template-columns: 1fr;
+                max-width: 420px;
+                margin: 0 auto;
+            }
+
+            .gamer-box {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 32px 22px;
+            }
+
+            .gamer-symbol {
+                font-size: 75px;
+            }
+
+            .advantages-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-card {
+                padding: 24px 18px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .world-map svg {
+                width: 160vw;
+            }
+        }
+
+        @media (max-width: 390px) {
+            .quick-benefits {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-copy h1 {
+                font-size: 34px;
+            }
+
+            .hero-actions .btn {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
-  <div class="container menu">
-    <a href="#inicio">
-      <img class="logo" src="imagens/logo-topnet.jpeg" alt="TOPNET">
+    <!-- MAPA-MÚNDI PONTILHADO EM VERDE -->
+    <div class="world-map" aria-hidden="true">
+        <svg viewBox="0 0 1200 650" role="presentation">
+            <defs>
+                <pattern id="worldDots" width="12" height="12" patternUnits="userSpaceOnUse">
+                    <circle cx="3" cy="3" r="2.1"></circle>
+                </pattern>
+
+                <mask id="worldMask">
+                    <rect width="1200" height="650" fill="black"></rect>
+
+                    <g fill="white">
+                        <path d="M100 145 L170 100 L270 90 L330 125 L350 180 L310 220 L280 280 L225 300 L185 265 L145 230 Z"></path>
+                        <path d="M260 290 L305 300 L330 345 L310 390 L285 365 Z"></path>
+                        <path d="M300 375 L370 350 L420 390 L405 470 L370 555 L330 520 L310 455 Z"></path>
+                        <path d="M530 130 L585 110 L640 125 L655 160 L620 185 L570 180 L535 160 Z"></path>
+                        <path d="M565 200 L650 190 L705 245 L685 330 L640 410 L595 370 L570 290 Z"></path>
+                        <path d="M650 115 L740 85 L860 95 L970 135 L1035 195 L980 245 L900 235 L835 270 L760 220 L690 205 Z"></path>
+                        <path d="M800 260 L875 260 L920 300 L890 340 L840 320 Z"></path>
+                        <path d="M1010 260 L1030 280 L1020 310 L1005 290 Z"></path>
+                        <path d="M900 390 L985 370 L1055 405 L1030 465 L965 480 L915 445 Z"></path>
+                        <path d="M1080 500 L1105 490 L1120 510 L1095 525 Z"></path>
+                        <path d="M350 45 L420 35 L455 75 L420 120 L365 105 Z"></path>
+                    </g>
+                </mask>
+            </defs>
+
+            <rect width="1200" height="650" fill="url(#worldDots)" mask="url(#worldMask)"></rect>
+        </svg>
+    </div>
+
+    <div class="ambient-light ambient-blue"></div>
+    <div class="ambient-light ambient-green"></div>
+
+    <!-- CABEÇALHO -->
+    <header class="header">
+        <div class="container header-inner">
+
+            <a class="brand" href="#inicio" aria-label="TOPNET - Página inicial">
+                <img
+                    src="imagens/fe47c62a-6809-4356-b434-55416eb63483.jpeg"
+                    alt="Logo oficial TOPNET">
+            </a>
+
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+                aria-controls="menuPrincipal">
+                ☰
+            </button>
+
+            <nav class="nav" id="menuPrincipal">
+                <a href="#inicio">Início</a>
+                <a href="#empresa">A TOPNET</a>
+                <a href="#planos">Planos</a>
+                <a href="#vantagens">Vantagens</a>
+                <a href="#contato">Contratar</a>
+                <a class="btn" href="https://wa.me/5527998028517" target="_blank" rel="noopener noreferrer">
+                    Fale conosco
+                </a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- BANNER PRINCIPAL -->
+        <section class="hero" id="inicio">
+            <div class="container hero-grid">
+
+                <div class="hero-copy">
+                    <span class="eyebrow">INTERNET 100% FIBRA ÓPTICA</span>
+
+                    <h1>
+                        A conexão que leva você ao
+                        <span>nível TOP!</span>
+                    </h1>
+
+                    <p>
+                        Internet com conexão estável, download e upload full
+                        em todos os planos e atendimento personalizado.
+                        Sua conexão merece ser TOP!
+                    </p>
+
+                    <div class="hero-actions">
+                        <a class="btn" href="#planos">CONHEÇA NOSSOS PLANOS</a>
+                        <a class="btn btn-outline" href="#contato">CONSULTE SUA REGIÃO</a>
+                    </div>
+
+                    <div class="hero-note">
+                        <span>Sem fidelidade</span>
+                        <span>Download e upload full</span>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <img
+                        src="imagens/imagens/Mascote%20Topnet%20em%20Miss%C3%A3o%20Espacial%20Gamer.png"
+                        alt="Topinho, mascote oficial da TOPNET em sua missão espacial gamer"
+                        fetchpriority="high">
+                </div>
+
+            </div>
+        </section>
+
+        <!-- DIFERENCIAIS RÁPIDOS -->
+        <div class="container quick-benefits">
+            <div class="quick-item">
+                <strong>FIBRA ÓPTICA</strong>
+                <span>Conexão para sua rotina</span>
+            </div>
+
+            <div class="quick-item">
+                <strong>FULL DUPLEX</strong>
+                <span>Download e upload full</span>
+            </div>
+
+            <div class="quick-item">
+                <strong>SEM FIDELIDADE</strong>
+                <span>Mais liberdade para você</span>
+            </div>
+
+            <div class="quick-item">
+                <strong>SUPORTE LOCAL</strong>
+                <span>Atendimento personalizado</span>
+            </div>
+        </div>
+
+        <!-- APRESENTAÇÃO DA EMPRESA -->
+        <section class="section about" id="empresa">
+            <div class="container about-content">
+
+                <div class="about-copy">
+                    <span class="eyebrow">CONHEÇA A TOPNET</span>
+
+                    <h2>
+                        A internet <span>Top</span> na sua Direção!
+                    </h2>
+
+                    <p>
+                        A TOPNET nasceu para oferecer uma experiência de
+                        internet de qualidade, com conexão estável e atendimento
+                        próximo de quem mais importa: você.
+                    </p>
+
+                    <p>
+                        Trabalhamos para conectar pessoas, famílias e negócios,
+                        com planos de fibra óptica que oferecem download e
+                        upload full.
+                    </p>
+
+                    <a class="btn" href="#planos">ENCONTRE SEU PLANO</a>
+                </div>
+
+                <div class="about-highlight">
+                    <strong>Mais que conexão. Compromisso com você.</strong>
+                    <p>
+                        Atendimento personalizado, suporte de qualidade e
+                        profissionais qualificados para cuidar da sua conexão.
+                        A satisfação dos nossos clientes é parte do nosso compromisso.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PLANOS -->
+        <section class="section plans" id="planos">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="eyebrow">ESCOLHA SUA VELOCIDADE</span>
+                    <h2>PLANOS <span>TOPNET</span></h2>
+                    <p>Encontre a velocidade ideal para sua casa ou seu negócio.</p>
+                </div>
+
+                <div class="plans-grid">
+
+                    <article class="plan-card">
+                        <h3>TOP 100</h3>
+
+                        <div class="plan-speed">100 <small>MEGA</small></div>
+
+                        <div class="plan-price">
+                            R$ 89,90<small>/mês</small>
+                        </div>
+
+                        <ul class="plan-features">
+                            <li>100 Mega de velocidade</li>
+                            <li>Download e upload full</li>
+                            <li>Conexão por fibra óptica</li>
+                            <li>Sem fidelidade</li>
+                        </ul>
+
+                        <button class="btn choose-plan" type="button" data-plan="100 MEGA">
+                            QUERO ESSE PLANO
+                        </button>
+                    </article>
+
+                    <article class="plan-card">
+                        <h3>TOP 200</h3>
+
+                        <div class="plan-speed">200 <small>MEGA</small></div>
+
+                        <div class="plan-price">
+                            R$ 99,90<small>/mês</small>
+                        </div>
+
+                        <ul class="plan-features">
+                            <li>200 Mega de velocidade</li>
+                            <li>Download e upload full</li>
+                            <li>Conexão por fibra óptica</li>
+                            <li>Sem fidelidade</li>
+                        </ul>
+
+                        <button class="btn choose-plan" type="button" data-plan="200 MEGA">
+                            QUERO ESSE PLANO
+                        </button>
+                    </article>
+
+                    <article class="plan-card">
+                        <h3>TOP 400</h3>
+
+                        <div class="plan-speed">400 <small>MEGA</small></div>
+
+                        <div class="plan-price">
+                            R$ 109,90<small>/mês</small>
+                        </div>
+
+                        <ul class="plan-features">
+                            <li>400 Mega de velocidade</li>
+                            <li>Download e upload full</li>
+                            <li>Conexão por fibra óptica</li>
+                            <li>Sem fidelidade</li>
+                        </ul>
+
+                        <button class="btn choose-plan" type="button" data-plan="400 MEGA">
+                            QUERO ESSE PLANO
+                        </button>
+                    </article>
+
+                    <article class="plan-card featured">
+                        <span class="plan-tag">DESTAQUE GAMER</span>
+
+                        <h3>TOP 500</h3>
+
+                        <div class="plan-speed">500 <small>MEGA</small></div>
+
+                        <div class="plan-price">
+                            R$ 119,00<small>/mês</small>
+                        </div>
+
+                        <ul class="plan-features">
+                            <li>500 Mega de velocidade</li>
+                            <li>Download e upload full</li>
+                            <li>Indicado para gamers</li>
+                            <li>Sem fidelidade</li>
+                        </ul>
+
+                        <button class="btn choose-plan" type="button" data-plan="500 MEGA">
+                            QUERO ESSE PLANO
+                        </button>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- DESTAQUE TOP 500 GAMER -->
+        <section class="gamer">
+            <div class="container">
+                <div class="gamer-box">
+
+                    <div class="gamer-copy">
+                        <span class="eyebrow">EXPERIÊNCIA TOPNET</span>
+
+                        <h2>SEU JOGO. SUA CONEXÃO. SEU NÍVEL TOP!</h2>
+
+                        <p>
+                            Conheça o TOP 500: 500 Mega de velocidade,
+                            download e upload full e uma opção indicada
+                            para quem gosta de jogar.
+                        </p>
+
+                        <a class="btn" href="#contato">
+                            QUERO O TOP 500
+                        </a>
+                    </div>
+
+                    <div class="gamer-symbol" aria-hidden="true">🎮</div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- VANTAGENS -->
+        <section class="section" id="vantagens">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="eyebrow">NOSSO COMPROMISSO</span>
+                    <h2>POR QUE ESCOLHER A <span>TOPNET?</span></h2>
+                    <p>Uma experiência de conexão com atendimento próximo e personalizado.</p>
+                </div>
+
+                <div class="advantages-grid">
+
+                    <article class="advantage">
+                        <div class="advantage-icon" aria-hidden="true">⚡</div>
+                        <h3>CONEXÃO ESTÁVEL</h3>
+                        <p>
+                            Internet por fibra óptica para acompanhar
+                            suas atividades do dia a dia.
+                        </p>
+                    </article>
+
+                    <article class="advantage">
+                        <div class="advantage-icon" aria-hidden="true">↕️</div>
+                        <h3>DOWNLOAD E UPLOAD FULL</h3>
+                        <p>
+                            Todos os nossos planos oferecem download
+                            e upload full.
+                        </p>
+                    </article>
+
+                    <article class="advantage">
+                        <div class="advantage-icon" aria-hidden="true">🛠️</div>
+                        <h3>SUPORTE DE QUALIDADE</h3>
+                        <p>
+                            Atendimento personalizado e equipe preparada
+                            para ajudar você.
+                        </p>
+                    </article>
+
+                    <article class="advantage">
+                        <div class="advantage-icon" aria-hidden="true">📍</div>
+                        <h3>ATENDIMENTO PRÓXIMO</h3>
+                        <p>
+                            Uma empresa conectada à região e próxima
+                            dos seus clientes.
+                        </p>
+                    </article>
+
+                    <article class="advantage">
+                        <div class="advantage-icon" aria-hidden="true">🔓</div>
+                        <h3>SEM FIDELIDADE</h3>
+                        <p>
+                            Planos sem compromisso de permanência
+                            por fidelização.
+                        </p>
+                    </article>
+
+                    <article class="advantage">
+                        <div class="advantage-icon" aria-hidden="true">💚</div>
+                        <h3>SATISFAÇÃO DO CLIENTE</h3>
+                        <p>
+                            Nosso compromisso é oferecer uma boa
+                            experiência e cuidar da sua conexão.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CHAMADA PARA CONTRATAÇÃO -->
+        <section class="callout">
+            <div class="container">
+                <div class="callout-inner">
+                    <h2>SUA CASA MERECE UMA INTERNET TOP!</h2>
+                    <p>
+                        Escolha seu plano e fale com nossa equipe pelo WhatsApp.
+                    </p>
+                    <a class="btn" href="#contato">QUERO SER TOPNET</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FORMULÁRIO DE COBERTURA -->
+        <section class="section contact" id="contato">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="eyebrow">FALE COM A NOSSA EQUIPE</span>
+                    <h2>VENHA PARA A <span>TOPNET!</span></h2>
+                    <p>Informe seu endereço para nossa equipe verificar a disponibilidade.</p>
+                </div>
+
+                <form class="form-card" id="coverageForm">
+
+                    <label for="plan">Qual plano você deseja?</label>
+                    <select id="plan" name="plan" required>
+                        <option value="">Selecione seu plano</option>
+                        <option value="TOP 100 MEGA - R$ 89,90/mês">TOP 100 Mega - R$ 89,90/mês</option>
+                        <option value="TOP 200 MEGA - R$ 99,90/mês">TOP 200 Mega - R$ 99,90/mês</option>
+                        <option value="TOP 400 MEGA - R$ 109,90/mês">TOP 400 Mega - R$ 109,90/mês</option>
+                        <option value="TOP 500 MEGA - R$ 119,00/mês">TOP 500 Mega - R$ 119,00/mês</option>
+                    </select>
+
+                    <label for="street">Rua ou avenida</label>
+                    <input
+                        type="text"
+                        id="street"
+                        name="street"
+                        placeholder="Digite o nome da rua"
+                        autocomplete="address-line1"
+                        required>
+
+                    <label for="number">Número da residência</label>
+                    <input
+                        type="text"
+                        id="number"
+                        name="number"
+                        placeholder="Digite o número"
+                        autocomplete="address-line2"
+                        required>
+
+                    <label for="neighborhood">Bairro</label>
+                    <input
+                        type="text"
+                        id="neighborhood"
+                        name="neighborhood"
+                        placeholder="Digite seu bairro"
+                        autocomplete="address-level3"
+                        required>
+
+                    <button class="btn" type="submit">
+                        ENVIAR ENDEREÇO PELO WHATSAPP
+                    </button>
+
+                    <p class="form-note">
+                        Nossa equipe receberá seus dados e verificará manualmente
+                        a disponibilidade no endereço informado.
+                    </p>
+
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="footer">
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div>
+                    <a class="footer-logo" href="#inicio">
+                        <img
+                            src="imagens/fe47c62a-6809-4356-b434-55416eb63483.jpeg"
+                            alt="Logo TOPNET">
+                    </a>
+
+                    <p>
+                        A internet Top na sua Direção!
+                    </p>
+                </div>
+
+                <div>
+                    <h3>FALE COM A TOPNET</h3>
+
+                    <a href="https://wa.me/5527998028517" target="_blank" rel="noopener noreferrer">
+                        WhatsApp: (27) 99802-8517
+                    </a>
+
+                    <a href="https://www.instagram.com/topnetsolutions/" target="_blank" rel="noopener noreferrer">
+                        Instagram: @topnetsolutions
+                    </a>
+                </div>
+
+                <div>
+                    <h3>NAVEGAÇÃO</h3>
+
+                    <a href="#inicio">Início</a>
+                    <a href="#empresa">A TOPNET</a>
+                    <a href="#planos">Nossos planos</a>
+                    <a href="#vantagens">Vantagens</a>
+                    <a href="#contato">Contratação</a>
+                </div>
+
+            </div>
+
+            <div class="copyright">
+                © <span id="currentYear"></span> TOPNET — Todos os direitos reservados.
+                <br>
+                A internet Top na sua Direção!
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLUTUANTE -->
+    <a
+        class="whatsapp-float"
+        href="https://wa.me/5527998028517"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Falar com a TOPNET pelo WhatsApp">
+        ☎
     </a>
 
-    <nav>
-      <a href="#planos">PLANOS</a>
-      <a href="#beneficios">VANTAGENS</a>
-      <a href="#contato" class="botao">CONTRATAR</a>
-    </nav>
-  </div>
-</header>
-
-<main>
-
-<section class="hero fundo-luz" id="inicio">
-  <div class="container hero-grid">
-
-    <div>
-      <div class="selo">⚡ CONEXÃO DE OUTRO NÍVEL ⚡</div>
-
-      <h1>
-        SUA INTERNET<br>
-        <span class="azul">MAIS</span><br>
-        <span class="verde">TURBO!</span>
-      </h1>
-
-      <p class="hero-texto">
-        Para jogar, trabalhar, assistir e viver conectado.
-        Entre para o universo TOPNET!
-      </p>
-
-      <div class="preco">
-        <small>PLANOS A PARTIR DE</small>
-        <strong>R$ 89,90</strong>
-        <span>/ MÊS</span>
-      </div>
-
-      <a href="#planos" class="botao">ESCOLHA SEU PLANO →</a>
-    </div>
-
-    <div class="hero-imagem">
-      <img
-        src="imagens/imagens/Mascote%20Topnet%20em%20Miss%C3%A3o%20Espacial%20Gamer.png"
-        alt="Topinho da TOPNET em missão espacial gamer"
-      >
-    </div>
-
-  </div>
-</section>
-
-<div class="faixa">
-  ⚡ FIBRA ÓPTICA • VELOCIDADE • SUPORTE • SEM FIDELIDADE ⚡
-</div>
-
-<section class="secao fundo-luz" id="beneficios">
-  <div class="container">
-
-    <h2 class="titulo">POR QUE ESCOLHER A <span>TOPNET?</span></h2>
-
-    <p class="subtitulo">
-      Muito mais que internet. Uma experiência TOP!
-    </p>
-
-    <div class="beneficios-grid">
-
-      <div class="beneficio">
-        <div class="icone">⚡</div>
-        <h3>VELOCIDADE</h3>
-        <p>Planos para acompanhar sua rotina e conectar seus dispositivos.</p>
-      </div>
-
-      <div class="beneficio">
-        <div class="icone">🎧</div>
-        <h3>SUPORTE PRÓXIMO</h3>
-        <p>Atendimento rápido e equipe técnica preparada para ajudar.</p>
-      </div>
-
-      <div class="beneficio">
-        <div class="icone">🚀</div>
-        <h3>SEM FIDELIDADE</h3>
-        <p>Mais liberdade para aproveitar sua conexão.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section class="secao planos" id="planos">
-  <div class="container">
-
-    <h2 class="titulo">ESCOLHA SUA <span>VELOCIDADE</span></h2>
-
-    <p class="subtitulo">
-      Existe um plano TOP esperando por você!
-    </p>
-
-    <div class="planos-grid">
-
-      <article class="plano">
-        <h3>TOP 100</h3>
-        <div class="megas">100<small>MEGAS</small></div>
-        <div class="valor">R$ 89,90</div>
-        <div class="mensal">POR MÊS</div>
-
-        <ul>
-          <li>Fibra óptica</li>
-          <li>Sem fidelidade</li>
-          <li>Suporte técnico</li>
-        </ul>
-
-        <button class="botao" onclick="selecionarPlano('100 Mega - R$ 89,90')">
-          QUERO ESSE!
-        </button>
-      </article>
-
-      <article class="plano">
-        <h3>TOP 200</h3>
-        <div class="megas">200<small>MEGAS</small></div>
-        <div class="valor">R$ 99,90</div>
-        <div class="mensal">POR MÊS</div>
-
-        <ul>
-          <li>Fibra óptica</li>
-          <li>Sem fidelidade</li>
-          <li>Suporte técnico</li>
-        </ul>
-
-        <button class="botao" onclick="selecionarPlano('200 Mega - R$ 99,90')">
-          QUERO ESSE!
-        </button>
-      </article>
-
-      <article class="plano">
-        <h3>TOP 400</h3>
-        <div class="megas">400<small>MEGAS</small></div>
-        <div class="valor">R$ 109,90</div>
-        <div class="mensal">POR MÊS</div>
-
-        <ul>
-          <li>Fibra óptica</li>
-          <li>Sem fidelidade</li>
-          <li>Suporte técnico</li>
-        </ul>
-
-        <button class="botao" onclick="selecionarPlano('400 Mega - R$ 109,90')">
-          QUERO ESSE!
-        </button>
-      </article>
-
-      <article class="plano destaque">
-        <div class="etiqueta-destaque">⚡ DESTAQUE GAMER ⚡</div>
-        <h3>TOP 500</h3>
-        <div class="megas">500<small>MEGAS</small></div>
-        <div class="valor">R$ 119,00</div>
-        <div class="mensal">POR MÊS</div>
-
-        <ul>
-          <li>Download e upload full</li>
-          <li>Ideal para gamers</li>
-          <li>Sem fidelidade</li>
-          <li>Suporte técnico</li>
-        </ul>
-
-        <button class="botao" onclick="selecionarPlano('500 Mega - R$ 119,00')">
-          QUERO ESSE!
-        </button>
-      </article>
-
-    </div>
-
-    <div class="personalizado">
-      <p>Quer uma solução diferente?</p>
-      <button class="botao" onclick="selecionarPlano('Plano personalizado - A combinar')">
-        PERSONALIZAR MEU PLANO
-      </button>
-    </div>
-
-  </div>
-</section>
-
-<section class="secao gamer fundo-luz">
-  <div class="container">
-
-    <div class="selo">🎮 MODO GAMER ATIVADO</div>
-
-    <h2 class="titulo">ENTRE NO <span>JOGO!</span></h2>
-
-    <p class="gamer-destaque">
-      SUA PARTIDA MERECE UMA CONEXÃO
-      <span>TOP!</span>
-    </p>
-
-    <p class="subtitulo">
-      Conheça o TOP 500: 500 Mega com download e upload full.
-    </p>
-
-    <a href="#planos" class="botao">CONHECER O TOP 500 →</a>
-
-  </div>
-</section>
-
-<section class="secao contato" id="contato">
-  <div class="container">
-
-    <h2 class="titulo">VAMOS CONECTAR <span>VOCÊ?</span></h2>
-
-    <p class="subtitulo">
-      Informe seu endereço para nossa equipe consultar a disponibilidade.
-    </p>
-
-    <form class="formulario" id="formulario">
-
-      <div class="campo">
-        <label for="plano">ESCOLHA SEU PLANO</label>
-        <select id="plano" required>
-          <option value="">Selecione um plano</option>
-          <option>100 Mega - R$ 89,90</option>
-          <option>200 Mega - R$ 99,90</option>
-          <option>400 Mega - R$ 109,90</option>
-          <option>500 Mega - R$ 119,00</option>
-          <option>Plano personalizado - A combinar</option>
-        </select>
-      </div>
-
-      <div class="campo">
-        <label for="rua">RUA / AVENIDA</label>
-        <input id="rua" type="text" placeholder="Nome da rua" required>
-      </div>
-
-      <div class="duplo">
-        <div class="campo">
-          <label for="numero">NÚMERO</label>
-          <input id="numero" type="text" placeholder="Número" required>
-        </div>
-
-        <div class="campo">
-          <label for="cep">CEP</label>
-          <input id="cep" type="text" placeholder="00000-000" required>
-        </div>
-      </div>
-
-      <div class="campo">
-        <label for="bairro">BAIRRO</label>
-        <input id="bairro" type="text" placeholder="Seu bairro" required>
-      </div>
-
-      <div class="campo">
-        <label for="cidade">CIDADE</label>
-        <input id="cidade" type="text" value="Praia Grande - ES" required>
-      </div>
-
-      <button type="submit" class="botao">
-        ⚡ CONSULTAR DISPONIBILIDADE NO WHATSAPP
-      </button>
-
-      <p class="aviso">
-        A disponibilidade será confirmada pela equipe TOPNET.
-      </p>
-
-    </form>
-
-  </div>
-</section>
-
-</main>
-
-<footer>
-  <img src="imagens/logo-topnet.jpeg" alt="TOPNET">
-
-  <p>A internet Top na sua Direção!</p>
-  <p>Atendimento: <strong>(27) 99802-8517</strong></p>
-  <p>© TOPNET - Todos os direitos reservados.</p>
-</footer>
-
-<script>
-function selecionarPlano(plano) {
-  document.getElementById("plano").value = plano;
-
-  document.getElementById("contato").scrollIntoView({
-    behavior: "smooth"
-  });
-}
-
-document.getElementById("formulario").addEventListener("submit", function(event) {
-  event.preventDefault();
-
-  const plano = document.getElementById("plano").value;
-  const rua = document.getElementById("rua").value.trim();
-  const numero = document.getElementById("numero").value.trim();
-  const cep = document.getElementById("cep").value.trim();
-  const bairro = document.getElementById("bairro").value.trim();
-  const cidade = document.getElementById("cidade").value.trim();
-
-  const mensagem =
-    "Olá, TOPNET! Quero consultar a disponibilidade.\n\n" +
-    "Plano: " + plano + "\n" +
-    "Rua: " + rua + "\n" +
-    "Número: " + numero + "\n" +
-    "CEP: " + cep + "\n" +
-    "Bairro: " + bairro + "\n" +
-    "Cidade: " + cidade;
-
-  const telefone = "5527998028517";
-
-  const link = "https://wa.me/" + telefone +
-    "?text=" + encodeURIComponent(mensagem);
-
-  window.open(link, "_blank");
-});
-</script>
+    <script>
+        "use strict";
+
+        // Número oficial do WhatsApp da TOPNET.
+        const WHATSAPP_NUMBER = "5527998028517";
+
+        // Atualiza o ano automaticamente no rodapé.
+        document.getElementById("currentYear").textContent =
+            new Date().getFullYear();
+
+        // Menu responsivo para celulares.
+        const menuButton = document.querySelector(".menu-toggle");
+        const navigation = document.getElementById("menuPrincipal");
+
+        menuButton.addEventListener("click", function () {
+            const isOpen = navigation.classList.toggle("open");
+
+            menuButton.setAttribute("aria-expanded", String(isOpen));
+            menuButton.setAttribute(
+                "aria-label",
+                isOpen ? "Fechar menu" : "Abrir menu"
+            );
+
+            menuButton.textContent = isOpen ? "✕" : "☰";
+        });
+
+        // Fecha o menu depois que o visitante seleciona uma seção.
+        navigation.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                navigation.classList.remove("open");
+                menuButton.setAttribute("aria-expanded", "false");
+                menuButton.setAttribute("aria-label", "Abrir menu");
+                menuButton.textContent = "☰";
+            });
+        });
+
+        // Botões dos planos: selecionam o plano e levam ao formulário.
+        const planButtons = document.querySelectorAll(".choose-plan");
+        const planSelect = document.getElementById("plan");
+
+        const planOptions = {
+            "100 MEGA": "TOP 100 MEGA - R$ 89,90/mês",
+            "200 MEGA": "TOP 200 MEGA - R$ 99,90/mês",
+            "400 MEGA": "TOP 400 MEGA - R$ 109,90/mês",
+            "500 MEGA": "TOP 500 MEGA - R$ 119,00/mês"
+        };
+
+        planButtons.forEach(function (button) {
+            button.addEventListener("click", function () {
+                const selectedPlan = button.dataset.plan;
+
+                planSelect.value = planOptions[selectedPlan] || "";
+
+                document.getElementById("contato").scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            });
+        });
+
+        // Envia os dados do formulário para o WhatsApp.
+        const coverageForm = document.getElementById("coverageForm");
+
+        coverageForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            if (!coverageForm.reportValidity()) {
+                return;
+            }
+
+            const selectedPlan = planSelect.value;
+            const street = document.getElementById("street").value.trim();
+            const number = document.getElementById("number").value.trim();
+            const neighborhood = document.getElementById("neighborhood").value.trim();
+
+            const message = [
+                "Olá, TOPNET! Tenho interesse em contratar um plano.",
+                "",
+                "Plano escolhido: " + selectedPlan,
+                "Rua/Avenida: " + street,
+                "Número: " + number,
+                "Bairro: " + neighborhood,
+                "",
+                "Gostaria de verificar a disponibilidade de cobertura no meu endereço."
+            ].join("\n");
+
+            const whatsappUrl =
+                "https://wa.me/" +
+                WHATSAPP_NUMBER +
+                "?text=" +
+                encodeURIComponent(message);
+
+            window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+        });
+    </script>
 
 </body>
 </html>
-
-
